@@ -3,13 +3,17 @@ import ReactDOM from "react-dom";
 import "./assets/main.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { PhotoProvider } from "./Context/Context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PhotoProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PhotoProvider>
+    ,
   </React.StrictMode>,
   document.getElementById("root")
 );
