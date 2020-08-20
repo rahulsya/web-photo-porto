@@ -7,14 +7,13 @@ import { PhotoProvider } from "./Context/Context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PhotoProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PhotoProvider>
-    ,
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <PhotoProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </PhotoProvider>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 

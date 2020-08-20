@@ -24,6 +24,34 @@ export default [
             },
           },
         },
+        {
+          fields: {
+            file: {
+              url: Img_2,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_4,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_5,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_6,
+            },
+          },
+        },
       ],
     },
   },
@@ -50,6 +78,34 @@ export default [
           fields: {
             file: {
               url: Img_2,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_1,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_4,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_5,
+            },
+          },
+        },
+        {
+          fields: {
+            file: {
+              url: Img_6,
             },
           },
         },
@@ -82,8 +138,8 @@ export default [
       id: "4",
     },
     fields: {
-      name: "boys with the coins",
-      slug: "boys",
+      name: "Toss the coin to your witcher",
+      slug: "Toss the coin to your witcher",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -103,8 +159,8 @@ export default [
       id: "5",
     },
     fields: {
-      name: "boys with the coins",
-      slug: "boys",
+      name: "Gaming",
+      slug: "gaming",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -124,8 +180,8 @@ export default [
       id: "6",
     },
     fields: {
-      name: "boys with the coins",
-      slug: "boys",
+      name: "Take on me",
+      slug: "Take on me",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -145,8 +201,8 @@ export default [
       id: "7",
     },
     fields: {
-      name: "boys with the coinss",
-      slug: "boys",
+      name: "Helloword",
+      slug: "helloworld",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -166,8 +222,8 @@ export default [
       id: "8",
     },
     fields: {
-      name: "lapan bos",
-      slug: "boys",
+      name: "Keyboard",
+      slug: "Keyboard",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -188,7 +244,7 @@ export default [
     },
     fields: {
       name: "9 bos",
-      slug: "boys",
+      slug: "9boss",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],
@@ -208,8 +264,8 @@ export default [
       id: "10",
     },
     fields: {
-      name: "10 data",
-      slug: "boys",
+      name: "walorant",
+      slug: "walorant",
       description:
         "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
       tags: ["Plush pillows and breathable bed linens"],

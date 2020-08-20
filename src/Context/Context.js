@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ItemPhoto from "../data";
+// import ItemPhoto from "../data";
+import Client from "../contenful";
+
 const PhotoContext = React.createContext();
 
 class PhotoProvider extends Component {
@@ -10,16 +12,37 @@ class PhotoProvider extends Component {
     photoCol3: [],
   };
 
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: "photoGallery",
+        // sorter
+        order: "sys.createdAt",
+      });
+      console.log(response.items[0].fields);
+      let tempPhotos = this.formatData(response.items);
+      let photos = this.formatData(response.items);
+
+      const devidedData = Math.ceil(tempPhotos.length / 3);
+      let photoCol1 = tempPhotos.splice(0, devidedData);
+      let photoCol2 = tempPhotos.splice(0, devidedData);
+      let photoCol3 = tempPhotos.splice(0, devidedData);
+
+      this.setState({ photos, photoCol1, photoCol2, photoCol3 });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   componentDidMount() {
-    let tempPhotos = this.formatData(ItemPhoto);
-    let photos = this.formatData(ItemPhoto);
-
-    const devidedData = Math.ceil(tempPhotos.length / 3);
-    let photoCol1 = tempPhotos.splice(0, devidedData);
-    let photoCol2 = tempPhotos.splice(0, devidedData);
-    let photoCol3 = tempPhotos.splice(0, devidedData);
-
-    this.setState({ photos, photoCol1, photoCol2, photoCol3 });
+    this.getData();
+    // let tempPhotos = this.formatData(ItemPhoto);
+    // let photos = this.formatData(ItemPhoto);
+    // const devidedData = Math.ceil(tempPhotos.length / 3);
+    // let photoCol1 = tempPhotos.splice(0, devidedData);
+    // let photoCol2 = tempPhotos.splice(0, devidedData);
+    // let photoCol3 = tempPhotos.splice(0, devidedData);
+    // this.setState({ photos, photoCol1, photoCol2, photoCol3 });
   }
 
   formatData(items) {
