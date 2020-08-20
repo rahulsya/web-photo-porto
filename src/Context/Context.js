@@ -19,7 +19,7 @@ class PhotoProvider extends Component {
         // sorter
         order: "sys.createdAt",
       });
-      console.log(response.items[0].fields);
+      console.log(response.items);
       let tempPhotos = this.formatData(response.items);
       let photos = this.formatData(response.items);
 
