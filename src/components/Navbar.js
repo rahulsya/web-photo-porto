@@ -6,7 +6,7 @@ export default function Navbar() {
     <header className="bg-gray-900 text-gray-200 py-3 ">
       <div className="flex items-center justify-between lg:container lg:mx-auto lg:px-16 px-1">
         <Link className="text-xl font-semibold px-4" to="/">
-          Medium
+          DarwinAntariksa
         </Link>
         <div className="flex">
           <Link
