@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 // import ItemPhoto from "../data";
 import Client from "../contenful";
+// import PhotoItems from "../components/Home/PhotoItems";
 
 const PhotoContext = React.createContext();
 
 class PhotoProvider extends Component {
   state = {
     photos: [],
-    photoCol1: [],
-    photoCol2: [],
-    photoCol3: [],
+    shortedPhotos: [],
+    type: "all",
   };
 
   getData = async () => {
@@ -17,18 +17,15 @@ class PhotoProvider extends Component {
       let response = await Client.getEntries({
         content_type: "photoGallery",
         // sorter
-        order: "sys.createdAt",
+        order: "-sys.createdAt",
       });
-      console.log(response.items);
-      let tempPhotos = this.formatData(response.items);
+      // console.log(response.items);
       let photos = this.formatData(response.items);
 
-      const devidedData = Math.ceil(tempPhotos.length / 3);
-      let photoCol1 = tempPhotos.splice(0, devidedData);
-      let photoCol2 = tempPhotos.splice(0, devidedData);
-      let photoCol3 = tempPhotos.splice(0, devidedData);
-
-      this.setState({ photos, photoCol1, photoCol2, photoCol3 });
+      this.setState({
+        photos,
+        shortedPhotos: photos,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -36,13 +33,6 @@ class PhotoProvider extends Component {
 
   componentDidMount() {
     this.getData();
-    // let tempPhotos = this.formatData(ItemPhoto);
-    // let photos = this.formatData(ItemPhoto);
-    // const devidedData = Math.ceil(tempPhotos.length / 3);
-    // let photoCol1 = tempPhotos.splice(0, devidedData);
-    // let photoCol2 = tempPhotos.splice(0, devidedData);
-    // let photoCol3 = tempPhotos.splice(0, devidedData);
-    // this.setState({ photos, photoCol1, photoCol2, photoCol3 });
   }
 
   formatData(items) {
@@ -62,9 +52,42 @@ class PhotoProvider extends Component {
     return photo;
   };
 
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = event.target.name;
+
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.filtersPhoto
+    );
+  };
+
+  filtersPhoto = () => {
+    let { photos, type } = this.state;
+
+    let tempPhoto = [...photos];
+
+    if (type !== "all") {
+      tempPhoto = tempPhoto.filter((photoItem) => photoItem.type === type);
+    }
+
+    this.setState({
+      shortedPhotos: tempPhoto,
+    });
+  };
+
   render() {
     return (
-      <PhotoContext.Provider value={{ ...this.state, getPhoto: this.getPhoto }}>
+      <PhotoContext.Provider
+        value={{
+          ...this.state,
+          getPhoto: this.getPhoto,
+          handleChange: this.handleChange,
+        }}
+      >
         {this.props.children}
       </PhotoContext.Provider>
     );

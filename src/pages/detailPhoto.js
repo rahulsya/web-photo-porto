@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { PhotoContext } from "../Context/Context";
 import PhotoItemDetails from "../components/Details/PhotoItemDetails";
 import PhotoColumnItem from "../components/Home/PhotoColumnItem";
+import chunkPhotoItem from "../utils/chunkPhotoItem";
 
 import { Fade } from "react-reveal";
+import parser from "html-react-parser";
 
 export default class detailPhoto extends Component {
   constructor(props) {
@@ -31,7 +33,7 @@ export default class detailPhoto extends Component {
   static contextType = PhotoContext;
 
   render() {
-    const { getPhoto } = this.context;
+    const { getPhoto, photos } = this.context;
     const photo = getPhoto(this.state.slug);
 
     if (!photo) {
@@ -45,6 +47,9 @@ export default class detailPhoto extends Component {
     const { name, description, images } = photo;
     const [mainImg, ...defaultImage] = images;
 
+    // buat component photo columntitem
+    let tempDataPhoto = chunkPhotoItem(photos);
+
     return (
       <div className="lg:container lg:mx-auto lg:px-32 px-4 mt-10">
         {/* section atas */}
@@ -52,10 +57,10 @@ export default class detailPhoto extends Component {
           <div className="flex flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mr-4">
               <div className="text-3xl font-bold capitalize mb-3">{name}</div>
-              <div>{description}</div>
+              <div className="text-justify">{parser(description)}</div>
             </div>
             <div className="w-1/2 hidden md:block">
-              <img src={mainImg} alt="" />
+              <img src={mainImg} alt={mainImg} />
             </div>
           </div>
           {/* divide */}
@@ -81,7 +86,7 @@ export default class detailPhoto extends Component {
           {/* end divide */}
         </Fade>
         <Fade delay={300}>
-          <PhotoColumnItem photo={this.context} />
+          <PhotoColumnItem photo={tempDataPhoto} />
         </Fade>
       </div>
     );
