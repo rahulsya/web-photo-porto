@@ -1,5 +1,5 @@
-export default (data) => {
-  let chunkSize = Math.ceil(data.length / 3);
+export default (data, size) => {
+  let chunkSize = Math.ceil(data.length / size);
   let tempData = [];
 
   for (let index = 0; index < data.length; index += chunkSize) {

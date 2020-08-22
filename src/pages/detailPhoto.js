@@ -47,9 +47,10 @@ export default class detailPhoto extends Component {
     const { name, description, images } = photo;
     const [mainImg, ...defaultImage] = images;
 
-    // buat component photo columntitem
-    let tempDataPhoto = chunkPhotoItem(photos);
-
+    // untuk component photo columntitem
+    let tempDataPhoto = chunkPhotoItem(photos, 3);
+    let detailPhoto = chunkPhotoItem(defaultImage, 2);
+    // console.log(detailPhoto);
     return (
       <div className="lg:container lg:mx-auto lg:px-32 px-4 mt-10">
         {/* section atas */}
@@ -70,11 +71,7 @@ export default class detailPhoto extends Component {
           </div>
           {/* end divide */}
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-            {defaultImage.map((image, index) => {
-              return <PhotoItemDetails key={index} image={image} />;
-            })}
-          </div>
+          <PhotoItemDetails detailPhoto={detailPhoto} />
 
           {/* divide */}
           <div className="divide-y divide-gray-400">

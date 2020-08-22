@@ -14,20 +14,26 @@ export default class Home extends Component {
   render() {
     const { shortedPhotos } = this.context;
 
-    let tempDataPhoto = chunkPhotoItem(shortedPhotos);
+    let tempDataPhoto = chunkPhotoItem(shortedPhotos, 3);
 
     return (
-      <div className="lg:container lg:mx-auto lg:px-32 px-4 overflow-hidden w-full">
+      <div className="lg:container lg:mx-auto px-4 lg:px-32 w-full">
         <Fade>
           <div className="text-2xl font-bold mt-5">My project </div>
           <div className="font-semibold text-sm mb-5 mt-4">
             Hello There, this all the project that I've worked on
           </div>
-          <FilterPhotos context={this.context} />
         </Fade>
         {/* grids */}
         <Fade>
-          <PhotoColumnItem photo={tempDataPhoto} />
+          <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
+            <div className="w-full lg:w-auto">
+              <FilterPhotos context={this.context} />
+            </div>
+            <div className="w-full lg:w-3/4 pr-4 overflow-y-auto">
+              <PhotoColumnItem photo={tempDataPhoto} />
+            </div>
+          </div>
         </Fade>
       </div>
     );

@@ -13,22 +13,6 @@ export default function PhotoColumnItem({ photo }) {
           </div>
         );
       })}
-
-      {/* <div className="flex flex-col">
-        {photoCol1.map((photo) => {
-          return <PhotoItems key={photo.id} photo={photo} />;
-        })}
-      </div>
-      <div className="flex flex-col">
-        {photoCol2.map((photo) => {
-          return <PhotoItems key={photo.id} photo={photo} />;
-        })}
-      </div>
-      <div className="flex flex-col">
-        {photoCol3.map((photo) => {
-          return <PhotoItems key={photo.id} photo={photo} />;
-        })}
-      </div> */}
     </div>
   );
 }
