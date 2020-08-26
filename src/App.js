@@ -5,12 +5,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import DetailPhoto from "./pages/detailPhoto";
 import error from "./pages/ErrorPage";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/photo/:id" component={DetailPhoto} />

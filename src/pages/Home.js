@@ -4,7 +4,7 @@ import { PhotoContext } from "../Context/Context";
 import { Fade } from "react-reveal";
 import chunkPhotoItem from "../utils/chunkPhotoItem";
 
-import PhotoColumnItem from "../components/Home/PhotoColumnItem";
+import PhotoContainer from "../components/Home/PhotoContainer";
 import FilterPhotos from "../components/Home/filterPhotos";
 
 export default class Home extends Component {
@@ -17,24 +17,19 @@ export default class Home extends Component {
     let tempDataPhoto = chunkPhotoItem(shortedPhotos, 3);
 
     return (
-      <div className="lg:container lg:mx-auto px-4 lg:px-32 w-full">
-        <Fade>
-          <div className="text-2xl font-bold mt-5">My project </div>
-          <div className="font-semibold text-sm mb-5 mt-4">
-            Hello There, this all the project that I've worked on
-          </div>
-        </Fade>
-        {/* grids */}
-        <Fade>
-          <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
-            <div className="w-full lg:w-auto">
-              <FilterPhotos context={this.context} />
-            </div>
-            <div className="w-full lg:w-3/4 pr-4 overflow-y-auto">
-              <PhotoColumnItem photo={tempDataPhoto} />
-            </div>
-          </div>
-        </Fade>
+      <div className=" h-screen flex flex-col lg:flex-row w-full overflow-hidden">
+        <div className="w-full lg:w-1/5">
+          <Fade>
+            <FilterPhotos context={this.context} />
+          </Fade>
+        </div>
+        <div className="w-full lg:w-4/5 overflow-y-auto px-4 lg:px-12">
+          <Fade>
+            <PhotoContainer photo={tempDataPhoto} />
+          </Fade>
+        </div>
+        {/* </div> */}
+        {/* </Fade> */}
       </div>
     );
   }

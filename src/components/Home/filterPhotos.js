@@ -5,14 +5,8 @@ export default function filterPhotos({ context }) {
   let categories = [...new Set(photos.map((item) => item.type))];
   categories = ["all", ...categories];
   return (
-    <div className=" mt-5">
-      {/* <div className="font-semibold text-gray-800 pr-4">
-        Filter Photo By Categories
-      </div>
-      <span className="text-sm text-gray-700 capitalize">
-        " Click tags below "
-      </span> */}
-      <div className="pr-6 pt-10 pb-2 flex lg:flex-col overflow-x-auto">
+    <div className="">
+      <div className="pr-6 pt-10 pb-2 flex flex-row lg:flex-col overflow-x-auto w-full">
         {categories.map((category, index) => {
           return (
             <button
@@ -20,7 +14,7 @@ export default function filterPhotos({ context }) {
               className={`inline-block 
                         ${category === type ? "font-bold underline" : ""}
                         rounded-full 
-                        px-6 
+                        px-6
                         lg:py-2 
                         text-sm
                         lg:text-md 
